@@ -1,0 +1,31 @@
+#默认使用配置
+spring:
+  profiles:
+    active: dev
+
+#公共配置与profiles选择无关
+mybatis:
+  typeAliasesPackage: com.demo.entity
+  mapperLocations: classpath:mapper/*.xml
+
+
+---
+
+#开发配置
+spring:
+  profiles: dev
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/test
+    username: root
+
+
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+
+
+   # spring.view.prefix: /WEB-INF//
+    #spring.view.suffix: .html
+
+    #静态文件访问配置
+    spring.mvc.static-path-pattern : /static/**
